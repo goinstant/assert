@@ -4,7 +4,11 @@
   "description": "Cross-browser/node Assertions Library that runs in legacy browsers.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/index"
+    "test": "mocha test/test.js",
+    "coveralls": "mocha --require blanket --reporter mocha-lcov-reporter test/test.js | `npm bin`/coveralls",
+    "blanket": {
+      "pattern": "assert/index.js"
+    }
   },
   "directories": {
     "test": "test"
@@ -13,14 +17,14 @@
     "node": "0.10.11"
   },
   "devDependencies": {
-    "mocha": "1.9.0"
+    "mocha": "1.9.0",
+    "mocha-lcov-reporter": "0.0.1",
+    "coveralls": "~2.3.0",
+    "blanket": "~1.1.5"
   },
   "dependencies": {
     "amdefine": "0.0.5",
     "lodash": "1.3.1"
-  },
-  "scripts": {
-    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
