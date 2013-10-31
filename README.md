@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/goinstant/assert.png?branch=master)](https://travis-ci.org/goinstant/assert)
 [![Coverage Status](https://coveralls.io/repos/goinstant/assert/badge.png)](https://coveralls.io/r/goinstant/assert)
+![Dependency Status](https://david-dm.org/goinstant/assert.png)
 
 A last-resort, legacy browser and node compatible, assert library.
 
