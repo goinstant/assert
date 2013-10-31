@@ -4,9 +4,6 @@ node_js:
 - '0.11'
 - '0.10'
 env:
-  global:
-  - COVERALLS_SERVICE_NAME: travis-pro
-  - secure: OP6ze9t6XJu5g53OX7xhgIprjXefTXESExvZsiWZ/Yu+7XzPqmnPL0Nx9f9wHRptvjKxncaEMboPe5SW47Xldl+LyKQcNFSEi0zjrWp1zkMAZBYecP/uNnWPc1v1X1+NjRhQL1obLYanM9pOj6EZXy9+DiWg8brjtCRJnG/nNog=
   matrix:
   - TARGET=test
   - TARGET=coveralls
