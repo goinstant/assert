@@ -5,8 +5,7 @@
   "description": "Cross-browser/node Assertions Library that runs in legacy browsers.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js",
-    "coveralls": "mocha --require blanket --reporter mocha-lcov-reporter test/test.js | `npm bin`/coveralls"
+    "test": "mocha test/test.js"
   },
   "directories": {
     "test": "test",
