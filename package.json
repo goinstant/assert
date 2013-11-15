@@ -7,9 +7,6 @@
   "scripts": {
     "test": "mocha test/test.js",
     "coveralls": "mocha --require blanket --reporter mocha-lcov-reporter test/test.js | `npm bin`/coveralls",
-    "blanket": {
-      "pattern": "assert/index.js"
-    }
   },
   "directories": {
     "test": "test",
