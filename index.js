@@ -808,7 +808,7 @@ if (typeof define == 'function' && typeof define.amd == 'object' &&
 } else if (typeof exports === 'object' && !exports.nodeType) {
   // Node
   var assert = factory(
-    require('lodash')
+    require('lodash/dist/lodash.legacy')
   );
 
   module.exports = assert;
