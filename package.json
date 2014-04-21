@@ -1,6 +1,6 @@
 {
   "name": "goinstant-assert",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "GoInstant <support@goinstant.com> (http://www.goinstant.com)",
   "description": "Cross-browser/node Assertions Library that runs in legacy browsers.",
   "main": "index.js",
