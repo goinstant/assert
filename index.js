@@ -14,11 +14,18 @@ if (Error.captureStackTrace && Object.create) {
 }
 
 // class to be used with fancyFail()
-function AssertionError(actual, expected, phrase, base) {
+function AssertionError(actual, expected, phrase, base, message) {
   this.name = 'AssertionError';
   this.actual = actual;
   this.expected = expected;
-  this.message = 'expected ' + objectDisplay(actual) + ' ' +
+  this.message = '';
+  if (message) {
+    this.message += message;
+    this.message += '\n';
+    this.message += '\n';
+  }
+
+  this.message += 'expected ' + objectDisplay(actual) + ' ' +
       phrase + ' ' +
     objectDisplay(expected);
 
@@ -69,7 +76,7 @@ function legacyFail(actual, verbPhrase, expected, message) {
 }
 
 function fancyFail(actual, verbPhrase, expected, message, base) {
-  throw new AssertionError(actual, expected, verbPhrase, base);
+  throw new AssertionError(actual, expected, verbPhrase, base, message);
 }
 
 var assert = function(truthy, message) {

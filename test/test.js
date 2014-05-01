@@ -41,6 +41,16 @@ describe('assert', function() {
     }
   });
 
+  it('prepends custom error message to exception if provided', function() {
+    try {
+      assert(false, "Custom error message!");
+    } catch (err) {
+      if (!(err.message.indexOf("Custom error message!") === 0)) {
+        throw new Error('Does not throw with custom error message prepended.');
+      }
+    }
+  });
+
   describe('#exception', function() {
 
     function OtherError(message) {
