@@ -259,13 +259,13 @@ assert.notInstanceOf = function(value, constructor, message) {
 };
 
 assert.include = function(haystack, needle, message) {
-  if (!_.include(haystack, needle)) {
+  if (!_.includes(haystack, needle)) {
     fail(haystack, "to include", needle, message, assert.include);
   }
 };
 
 assert.notInclude = function(haystack, needle, message) {
-  if (_.include(haystack, needle)) {
+  if (_.includes(haystack, needle)) {
     fail(haystack, "to not include", needle, message, assert.notInclude);
   }
 };
@@ -437,7 +437,7 @@ var objectDisplay = function (obj) {
   var str = inspect(obj);
   var type = Object.prototype.toString.call(obj);
 
-  if (str.length >= 40) {
+  if (str.length >= 250) {
     if (type === '[object Function]') {
       return !obj.name || obj.name === '' ? '[Function]'
         : '[Function: ' + obj.name + ']';
@@ -452,7 +452,7 @@ var objectDisplay = function (obj) {
       return str;
     }
   } else {
-    return str;
+    return JSON.strinfify(obj, null, 4);
   }
 };
 
@@ -808,7 +808,7 @@ if (typeof define == 'function' && typeof define.amd == 'object' &&
 } else if (typeof exports === 'object' && !exports.nodeType) {
   // Node
   var assert = factory(
-    require('lodash/dist/lodash.legacy')
+    require('lodash')
   );
 
   module.exports = assert;
